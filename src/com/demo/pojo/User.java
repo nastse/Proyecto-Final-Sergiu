@@ -4,6 +4,7 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -15,6 +16,7 @@ import org.hibernate.validator.constraints.NotBlank;
 public class User {
 
 	@Id
+	@GeneratedValue //PARA DECIR QUE ES AUTOINCREMENTADO
 	@Column(name="id_usuario")
 	private int id_usuario;
 	

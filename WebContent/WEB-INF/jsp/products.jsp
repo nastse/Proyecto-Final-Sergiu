@@ -46,11 +46,13 @@
 	
 	<table border="1" id="productTable">
 			<tr>
-				<th>Nombre</th>
-				<th>Precio</th>
-				<th>Descripcion</th>
+				<th>Tipo</th>
+				<th>Marca</th>
+				<th>Talla</th>
+				<th>Peso</th>
+				<th>Altura</th>
 				<th>Imagen</th>
-				<th>Action</th>
+				<th>Eliminar</th>
 			</tr>
 			
 
@@ -58,13 +60,15 @@
 		<%-- HAGO UN FOREACH PARA MOSTRAR TODAS LAS FILAS QUE ME DEVUELVE LA CONSULTA  --%>
 		<c:forEach items="${allProducts}" var="product">
 		<%-- PARA SABER QUE PRODUCTO/FILA ELIMINO  --%>
-			<tr  id="tr_${product.id}" align="center">
+			<tr  id="tr_${product.id_rev}" align="center">
 				<%-- LLAMO AL OBJETO EL VALOR QUE QUIERO MOSTRAR  --%>
-				<td>${product.name}</td>
-				<td>${product.price}$</td>
-				<td>${product.description}</td>
-				<td><img width="200px" height="200px" src="${pageContext.request.contextPath}/img/${product.image}"></td>	
-				<td><input type="button" value="Delete" id="btn_${product.id}" onclick="deleteProduct(this.id)"></td>
+				<td>${product.categoria}</td>
+				<td>${product.marca}</td>
+				<td>${product.talla}</td>
+				<td>${product.peso}</td>
+				<td>${product.altura}</td>
+				<td><img width="200px" height="200px" src="${pageContext.request.contextPath}/img/${product.imagen}"></td>	
+				<td><input type="button" value="Delete" id="btn_${product.id_rev}" onclick="deleteProduct(this.id_rev)"></td>
 			</tr>
 		</c:forEach>
 	</table>

@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.demo.dao.registery.RegisteryDAO;
-import com.demo.models.Products_Model;
+
 
 
 

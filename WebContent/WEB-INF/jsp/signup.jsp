@@ -43,8 +43,8 @@
 	<form action="${pageContext.request.contextPath}/signup" method="post" enctype="multipart/form-data" onsubmit="return dovalidations()">
 		<table>
 			<tr>
-				<td><label>Nombre de Usuario:</label></td>
-				<td><input id="username" type="text" name="username"></td>
+				<td><label>Email:</label></td>
+				<td><input id="email" type="text" name="email"></td>
 			</tr>
 			<tr>
 				<td><label>Contraseña:</label></td>
@@ -53,27 +53,6 @@
 			<tr>
 				<td><label>Confirma Contraseña:</label></td>
 				<td><input id="repassword" type="password" name="repassword"></td>
-			</tr>
-			<tr>
-				<td><label>Género:</label></td>
-				<td><input type="radio" name="sexo" value="Hombre"><input type="radio" name="sexo" value="Mujer"></td>
-			</tr>
-			<tr>
-				<td><label>Vehículo:</label></td>
-				<td><input type="checkbox" name="vehiculo" value="Coche"><input type="checkbox" name="vehiculo" value="Bici"></td>
-			</tr>
-			<tr>
-				<td><label>País:</label></td>
-				<td>
-					<select name="pais">
-						<option value="spain">SPAIN</option>
-						<option value="portugal">PORTUGAL</option>
-						<option value="usa" selected="selected">USA</option>				
-					</select>
-				</td></tr>
-			<tr>
-				<td><label>Selecciona una imagen:</label></td>
-				<td><input type="file" name="image"></td>
 			</tr>
 			<tr>
 				<td><input type="submit" value="Registrarse"></td>

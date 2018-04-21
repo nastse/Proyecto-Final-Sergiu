@@ -1,5 +1,7 @@
 package com.demo.pojo;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,62 +15,157 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 
 
-@XmlRootElement(name="product")
-@XmlAccessorType(XmlAccessType.FIELD)
+
 @Entity
-@Table(name="products")
+@Table(name="review")
 public class Products {
 
-	@XmlAttribute
-	@Column(name="id")
+	@Column(name="id_rev")
 	@Id
 	@GeneratedValue //PARA DECIR QUE ES AUTOINCREMENTADO
-	private int id;
+	private int id_rev;
 	
-	@XmlElement(name="name123")
-	@Column(name="name")
-	private String name;
+	@Column(name="imagen")
+	private String imagen;
 	
-	@Column(name="price")
-	private int price;
+	@Column(name="id_user")
+	private int id_user;
 	
-	@Column(name="description")
-	private String description;
+	@Column(name="marca")
+	private String marca;
 	
-	@Column(name="image")
-	private String image;
+	@Column(name="categoria")
+	private String categoria;
 	
+	@Column(name="talla")
+	private String talla;
 	
-	public int getId() {
-		return id;
+	@Column(name="peso")
+	private int peso;
+	
+	@Column(name="altura")
+	private int altura;
+	
+	@Column(name="temp_max")
+	private int temp_max;
+	
+	@Column(name="temp_min")
+	private int temp_min;
+	
+	@Column(name="ajuste")
+	private int ajuste;
+	
+	@Column(name="creado")
+	private Date creado;
+	
+	@Column(name="estado")
+	private int estado;
+
+	public int getId_rev() {
+		return id_rev;
 	}
-	public void setId(int id) {
-		this.id = id;
+
+	
+	public void setId_rev(int id_rev) {
+		this.id_rev = id_rev;
 	}
-	public String getName() {
-		return name;
+
+	public String getImagen() {
+		return imagen;
 	}
-	public void setName(String name) {
-		this.name = name;
+
+	public void setImagen(String imagen) {
+		this.imagen = imagen;
 	}
-	public int getPrice() {
-		return price;
+
+	public int getId_user() {
+		return id_user;
 	}
-	public void setPrice(int price) {
-		this.price = price;
+
+	public void setId_user(int id_user) {
+		this.id_user = id_user;
 	}
-	public String getDescription() {
-		return description;
+
+	public String getMarca() {
+		return marca;
 	}
-	public void setDescription(String description) {
-		this.description = description;
+
+	public void setMarca(String marca) {
+		this.marca = marca;
 	}
-	public String getImage() {
-		return image;
+
+	public String getCategoria() {
+		return categoria;
 	}
-	public void setImage(String image) {
-		this.image = image;
+
+	public void setCategoria(String categoria) {
+		this.categoria = categoria;
 	}
+
+	public String getTalla() {
+		return talla;
+	}
+
+	public void setTalla(String talla) {
+		this.talla = talla;
+	}
+
+	public int getPeso() {
+		return peso;
+	}
+
+	public void setPeso(int peso) {
+		this.peso = peso;
+	}
+
+	public int getAltura() {
+		return altura;
+	}
+
+	public void setAltura(int altura) {
+		this.altura = altura;
+	}
+
+	public int getTemp_max() {
+		return temp_max;
+	}
+
+	public void setTemp_max(int temp_max) {
+		this.temp_max = temp_max;
+	}
+
+	public int getTemp_min() {
+		return temp_min;
+	}
+
+	public void setTemp_min(int temp_min) {
+		this.temp_min = temp_min;
+	}
+
+	public int getAjuste() {
+		return ajuste;
+	}
+
+	public void setAjuste(int ajuste) {
+		this.ajuste = ajuste;
+	}
+
+	public Date getCreado() {
+		return creado;
+	}
+
+	public void setCreado(Date creado) {
+		this.creado = creado;
+	}
+
+	public int getEstado() {
+		return estado;
+	}
+
+	public void setEstado(int estado) {
+		this.estado = estado;
+	}
+	
 	
 	
 	

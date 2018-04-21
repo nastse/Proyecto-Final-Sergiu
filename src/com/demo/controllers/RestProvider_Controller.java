@@ -24,7 +24,7 @@ public class RestProvider_Controller {
 		Products product = RegisteryDAO.getProductsDAO().getProductByProductId(productId);
 		
 		//CONCATENO EL NOMBRE DE LA IMAGE CON EL LINK PARA VISUALIZARLA
-		product.setImage("http://localhost:8081/Spring_Web_App/img/"+product.getImage());
+		product.setImagen("http://localhost:8081/Spring_Web_App/img/"+product.getImagen());
 		
 		JSONObject json = new JSONObject(product);
 		
@@ -40,7 +40,7 @@ public class RestProvider_Controller {
 		
 		for(Products product : products) {
 			//CREO UN JSON POR CADA PRODUCTO
-			product.setImage("http://localhost:8081/Spring_Web_App/img/"+product.getImage());
+			product.setImagen("http://localhost:8081/Spring_Web_App/img/"+product.getImagen());
 			JSONObject json = new JSONObject(product);
 			jArray.put(json);
 			
@@ -54,7 +54,7 @@ public class RestProvider_Controller {
 	public Products xmlGetProductById(@PathVariable("productId") String productId) {
 		
 		Products product = RegisteryDAO.getProductsDAO().getProductByProductId(productId);
-		product.setImage("http://localhost:8081/Spring_Web_App/img/"+product.getImage());
+		product.setImagen("http://localhost:8081/Spring_Web_App/img/"+product.getImagen());
 		
 		//DEVUELVO UN POJO DE PRODUCTO
 		return product;

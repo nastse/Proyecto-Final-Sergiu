@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.demo.dao.registery.RegisteryDAO;
-import com.demo.models.Signup_Model;
 import com.demo.pojo.User;
 
 
