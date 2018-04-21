@@ -33,7 +33,7 @@ public class Signup_Controller
 		
 		return mav;
 	}
-	
+	//D
 	@RequestMapping(value="/signup" , method=RequestMethod.POST)
 	public ModelAndView doSignUpProcess(HttpServletRequest request)
 	{
