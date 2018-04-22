@@ -5,8 +5,15 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Login Page</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	<title>Login Page</title>
+	
+	<script>
+	 	function closeWindow() {
+	        window.close();
+	    }
+	</script>
+	
 </head>
 <body>
 	
@@ -15,7 +22,7 @@
 <!-- 	AUTHENTICATION PROCES FOR LOGIN SECCION 6 -->
 	<label style="color: red;">${error_msg}</label>
 	
-	<form:form action="${pageContext.request.contextPath}/login" modelAttribute="user" method="post">
+	<form:form action="${pageContext.request.contextPath}/login" modelAttribute="user" method="post" onsubmit="closeWindow()">
 		<form:errors path="*" style="color:red; background-color:#ffb3b3;" element="div"/>
 		<table>
 			<tr>

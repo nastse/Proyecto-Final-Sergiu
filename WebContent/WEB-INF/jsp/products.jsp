@@ -11,32 +11,31 @@
 	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 
 	<script type="text/javascript">
-	
-	<%-- FUNCION QUE ELIMINA UN PRODUCTO/FILA AL HACER CLICK EN EL BOTON --%>
-	function deleteProduct(id){
-		id = id.split("_")[1];
-		
-		$.ajax({
+		<%-- FUNCION QUE ELIMINA UN PRODUCTO/FILA AL HACER CLICK EN EL BOTON --%>
+		function deleteProduct(id){
+			id = id.split("_")[1];
 			
-			url : "${pageContext.request.contextPath}/deleteProduct",
-			type : "post",
-			data : "productId="+id,
+			$.ajax({
+				
+		// LA PAGINA A LA QUE LLAMO PARA BORRAR UN PRODUCTO
+				url : "${pageContext.request.contextPath}/deleteProduct",
+				type : "post",
+				data : "productId="+id,
+				
+				success : function(response){
+					var table = document.getElementById("productTable");
+					var tr = document.getElementById("tr_"+id);
+					table.deleteRow(tr.rowIndex);
+					alert(response);
+				},
+				
+				error :function(error){
+					alert(error);
+				}
+				
+			});
 			
-			success : function(response){
-				var table = document.getElementById("productTable");
-				var tr = document.getElementById("tr_"+id);
-				table.deleteRow(tr.rowIndex);
-				alert(response);
-			},
-			
-			error :function(error){
-				alert(error);
-			}
-			
-		});
-		
-	}
-	
+		}
 	</script>
 	
 
@@ -68,7 +67,7 @@
 				<td>${product.peso}</td>
 				<td>${product.altura}</td>
 				<td><img width="200px" height="200px" src="${pageContext.request.contextPath}/img/${product.imagen}"></td>	
-				<td><input type="button" value="Delete" id="btn_${product.id_rev}" onclick="deleteProduct(this.id_rev)"></td>
+				<td><input type="button" value="Delete" id="btn_${product.id_rev}" onclick="deleteProduct(this.id)"></td>
 			</tr>
 		</c:forEach>
 	</table>

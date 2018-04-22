@@ -5,10 +5,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-	<title>Welcome to Home</title>
-	<link href='<c:url value="/css/style.css"></c:url>' rel="stylesheet">
-	<script type="text/javascript" src='<c:url value="/js/demo.js"></c:url>'></script>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+		<title>Welcome to Home</title>
+		<link href='<c:url value="/css/style.css"></c:url>' rel="stylesheet">
+	
+		<script type="text/javascript" src='<c:url value="/js/demo.js"></c:url>'></script>
+
+	
+	
 </head>
 <body>
 
@@ -44,12 +48,16 @@
 	
 	</form:form>
 
+	<script>
+	    function popup() {
+	        window.open("${pageContext.request.contextPath}/login", 'window', 'width=720,height=720');
+	    }
+	</script>
 
-
-
+	<a onclick="popup()">LOGUEARSE</a>
 	<a class="demo" href="${pageContext.request.contextPath}/login">Login</a>	
 	<a class="demo" href="${pageContext.request.contextPath}/signup">Sign Up</a>
-	
+	<a onclick="hello()">Sign Up</a>
 	
 	
 	<table border="1" id="productTable">
@@ -84,7 +92,7 @@
 	
 	
 	
-	<a onclick="hello()">Sign Up</a>
+	
 	
 </body>
 </html>

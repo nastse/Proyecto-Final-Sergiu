@@ -18,6 +18,8 @@ public class Ajax_Controller {
 		
 		String productId = request.getParameter("productId");
 		
+		System.out.println(productId);
+		
 		boolean flag = RegisteryDAO.getProductsDAO().deleteProductById(productId);
 		
 		if(flag){

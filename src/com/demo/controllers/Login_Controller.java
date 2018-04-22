@@ -12,6 +12,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.demo.dao.registery.RegisteryDAO;
@@ -49,6 +50,7 @@ public class Login_Controller {
 		return "login";
 	}*/
 	
+
 	@RequestMapping(value="/login", method=RequestMethod.POST)
 	public String do_login(HttpServletRequest req, Model md, HttpSession session, @Valid User user, BindingResult br) {
 		
@@ -107,6 +109,7 @@ public class Login_Controller {
 			return "login";
 			
 		}catch(Exception e){
+			
 			return "login";
 		}
 	}
