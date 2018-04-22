@@ -7,7 +7,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import org.hibernate.validator.constraints.Email;
 
+import javax.validation.constraints.Size;
 import org.hibernate.validator.constraints.NotBlank;
 
 //Mapeo hacia la Tabla Usuario de mi BDDA
@@ -15,16 +17,24 @@ import org.hibernate.validator.constraints.NotBlank;
 @Table(name="usuario")
 public class User {
 
+	
 	@Id
 	@GeneratedValue //PARA DECIR QUE ES AUTOINCREMENTADO
 	@Column(name="id_usuario")
 	private int id_usuario;
 	
+	@NotBlank(message="El email no puede estar vacio")
+	@Email(message="Email incorrecto")
 	@Column(name="email")
 	private String email;
 	
+	@Size(min=5)
 	@Column(name="password")
 	private String password;
+	
+	@Size(min=5)
+	@Column(name="repassword")
+	private String repassword;
 	
 	@Column(name="nombre")
 	private String nombre;
@@ -72,6 +82,12 @@ public class User {
 	}
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	public String getRepassword() {
+		return repassword;
+	}
+	public void setRepassword(String repassword) {
+		this.repassword = repassword;
 	}
 	public String getNombre() {
 		return nombre;

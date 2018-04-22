@@ -27,6 +27,7 @@ public class UserDAO implements com.demo.dao.layer.UserDAO{
 				session.close();
 				
 				if(user.size()==1) return "Login Correcto";
+				
 				else return "Error vuelve a intenarlo";
 				
 				

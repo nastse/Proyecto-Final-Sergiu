@@ -12,23 +12,25 @@
 	
 	<h1>Ingresar Usuario</h1>
 	
+<!-- 	AUTHENTICATION PROCES FOR LOGIN SECCION 6 -->
 	<label style="color: red;">${error_msg}</label>
 	
 	<form:form action="${pageContext.request.contextPath}/login" modelAttribute="user" method="post">
+		<form:errors path="*" style="color:red; background-color:#ffb3b3;" element="div"/>
 		<table>
 			<tr>
 				<td><label>Enter Username:</label></td>
 				<td>
-					<form:input type="text" path="email" name="username"></form:input>
-					<br><form:errors path="email" style="color:red"></form:errors>
-				</td>
+					<form:input type="text" path="email" name="username"></form:input></td>
+<%-- 					<br><form:errors path="email" style="color:red"></form:errors> --%>
+				
 			</tr>
 			<tr>
 				<td><label>Enter Password:</label></td>
 				<td>
-					<form:input type="password" path="password" name="password"></form:input>
-					<br><form:errors path="password" style="color:red"></form:errors>
-				</td>
+					<form:input type="password" path="password" name="password"></form:input></td>
+<%-- 					<br><form:errors path="password" style="color:red"></form:errors> --%>
+				
 			</tr>
 			<tr>
 				<td>&nbsp</td>
