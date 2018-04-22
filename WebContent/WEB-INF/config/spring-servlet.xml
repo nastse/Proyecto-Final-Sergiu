@@ -17,6 +17,21 @@
 	<property name="prefix" value="/WEB-INF/jsp/"></property>
 	<property name="suffix" value=".jsp"></property>
 	</bean>
+
+<!-- 	<bean id="tilesViewResolver" -->
+<!-- 		class="org.springframework.web.servlet.view.tiles3.TilesViewResolver"> -->
+<!-- 	</bean> -->
+<!-- 	<bean id="tilesConfigurer" -->
+<!-- 		class="org.springframework.web.servlet.view.tiles3.TilesConfigurer"> -->
+<!-- 		<property name="definitions"> -->
+<!-- 			<list> -->
+<!-- 				PUEDO TENER LAYOUTS DIFERENTES SEGUN EL TIPO DE USUARIO -->
+<!-- 				<value>/WEB-INF/config/layout.xml</value> -->
+			
+<!-- 			</list> -->
+<!-- 		</property> -->
+<!-- 	</bean> -->
+
 	
 	
 	<mvc:resources location="/WEB-INF/images/" mapping="/img/**"></mvc:resources>
@@ -48,17 +63,5 @@
 		</property>
 	</bean>
 	
-	<bean id="tilesViewResolver"
-		class="org.springframework.web.servlet.view.tiles3.TilesViewResolver">
-	</bean>
-	<bean id="tilesConfigurer"
-		class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
-		<property name="definitions">
-			<list>
-				<value>/WEB-INF/config/layout.xml</value>
-			
-			</list>
-		
-		</property>
-	</bean>
+
 </beans>

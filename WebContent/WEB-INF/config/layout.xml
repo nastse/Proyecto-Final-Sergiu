@@ -5,10 +5,14 @@
        
 <tiles-definitions>
 
-	<definition name="tiles" template="/WEB-INF/jsp/tilesDemo.jsp">
-		<put-attribute name="title" value="Apache Tiles Demo"></put-attribute>
-		<put-attribute name="header" value="/WEB-INF/jsp/header.jsp"></put-attribute>
-		<put-attribute name="footer" value="/WEB-INF/jsp/footer.jsp"></put-attribute>
+	<definition name="tiles" template="/WEB-INF/jsp/products.jsp">
+		<put-attribute name="title" value="PROYECTO FINAL SERGIU"></put-attribute>
+	
+		
 	</definition>
+	
+	
+	
+
 
 </tiles-definitions>   

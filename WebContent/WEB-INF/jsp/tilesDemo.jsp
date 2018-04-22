@@ -8,13 +8,12 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>
 	<tiles:insertAttribute name="title"></tiles:insertAttribute>
+	
 </title>
 </head>
 <body>
 	
-	<tiles:insertAttribute name="header"></tiles:insertAttribute>
-	<h1>This is page contenet...</h1>
-	<tiles:insertAttribute name="footer"></tiles:insertAttribute>
+	<h1>Apache Tiles Demo</h1>
 
 </body>
 </html>
