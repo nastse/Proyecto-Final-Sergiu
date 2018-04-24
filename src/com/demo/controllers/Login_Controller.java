@@ -87,7 +87,7 @@ public class Login_Controller {
 				
 				if(message != 0) {
 					
-					//RECOJO LA SESION Y LE ASIGNO UN NOMBRE
+					//RECOJO LA SESION Y LE ASIGNO UN NOMBRE LO PASO AL JSP PARA MOSTRAR
 					session.setAttribute("email", username);
 					
 					//RECOJO LA SESION Y LE ASIGNO UN NOMBRE
