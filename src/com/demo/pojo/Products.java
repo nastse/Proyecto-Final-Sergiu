@@ -6,6 +6,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -26,6 +28,8 @@ public class Products {
 	@Column(name="imagen")
 	private String imagen;
 	
+	//@ManyToOne
+	//@JoinColumn(name="id_usser")
 	@Column(name="id_user")
 	private int id_user;
 	

@@ -31,7 +31,7 @@ public class ProductsDAO implements com.demo.dao.layer.ProductsDAO {
 		try{
 			Session session = HibernateConnection.doHibernateConnection().openSession();
 			
-			List<Products> product = session.createQuery("From Products where id_rev='"+id+"'").list();
+			List<Products> product = session.createQuery("From Products where id='"+id+"'").list();
 			
 			if(product != null && product.get(0) != null){
 				session.beginTransaction();
@@ -64,5 +64,41 @@ public class ProductsDAO implements com.demo.dao.layer.ProductsDAO {
 			return null;
 		}
 	}
+	
+	
+	//DEVUELVO LISTA DE PRODUCTOS POR SU ID DE USUARIO
+		public List<Products> getProductByUserId(int id) {
+			try {
+				
+				Session session = HibernateConnection.doHibernateConnection().openSession();
+				
+				List <Products> productosId = session.createQuery("From Products where id_user='"+id+"')").list();
+				session.close();
+				
+				return productosId;
+				
+			}catch(Exception e) {
+				
+				return null;
+			}
+		}
+		
+		/*//DEVUELVO LISTA DE PRODUCTOS POR SU NOMBRE DE USUARIO
+	//NO FUNCIONA	
+				public List<Products> getProductByUserName(String user) {
+					try {
+						
+						Session session = HibernateConnection.doHibernateConnection().openSession();
+						
+						List <Products> productosId = session.createQuery("Select * from Products p, User u, where p.id_user=u.id_usuario and u.email='"+user+"')").list();
+						session.close();
+						
+						return productosId;
+						
+					}catch(Exception e) {
+						
+						return null;
+					}
+				}*/
 	
 }

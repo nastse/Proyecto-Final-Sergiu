@@ -6,6 +6,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import org.hibernate.validator.constraints.Email;
 
@@ -19,6 +20,7 @@ public class User {
 
 	
 	@Id
+	//@OneToMany(mappedBy="review")
 	@GeneratedValue //PARA DECIR QUE ES AUTOINCREMENTADO
 	@Column(name="id_usuario")
 	private int id_usuario;

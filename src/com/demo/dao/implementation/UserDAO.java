@@ -11,7 +11,7 @@ import com.demo.pojo.User;
 public class UserDAO implements com.demo.dao.layer.UserDAO{
 	
 	//USANDO HQL
-		public String doHibernateLogin(String username, String password) {
+		public int doHibernateLogin(String username, String password) {
 			
 			try {
 				
@@ -26,13 +26,13 @@ public class UserDAO implements com.demo.dao.layer.UserDAO{
 				//Cerramos la sesion
 				session.close();
 				
-				if(user.size()==1) return "Login Correcto";
+				if(user.size()==1) return user.get(0).getId_usuario();
 				
-				else return "Error vuelve a intenarlo";
+				else return 0;
 				
 				
 			}catch(Exception e) {
-				return "Intentalo de nuevo";
+				return 0;
 			}
 			
 		}

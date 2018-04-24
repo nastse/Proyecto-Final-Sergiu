@@ -66,9 +66,9 @@ public class Index_Controller {
 			}else{
 				
 				//MODELO DAO
-				String message = RegisteryDAO.getUserDAO().doHibernateLogin(username, password);
+				int message = RegisteryDAO.getUserDAO().doHibernateLogin(username, password);
 				
-				if(message.equals("Login Correcto")) {
+				if(message != 0) {
 					
 					//RECOJO LA SESION Y LE ASIGNO UN NOMBRE
 					session.setAttribute("email", username);

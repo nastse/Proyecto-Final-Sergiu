@@ -4,6 +4,6 @@ import com.demo.pojo.User;
 
 public interface UserDAO {
 
-	public String doHibernateLogin(String username, String password);
+	public int doHibernateLogin(String username, String password);
 	public String doHibernateSignUp(User user);
 }

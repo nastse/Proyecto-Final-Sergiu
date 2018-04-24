@@ -1,5 +1,7 @@
 package com.demo.controllers;
 
+import java.util.List;
+
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -16,6 +18,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.demo.dao.registery.RegisteryDAO;
+import com.demo.pojo.Products;
 import com.demo.pojo.User;
 
 @Controller
@@ -58,6 +61,7 @@ public class Login_Controller {
 			
 			//System.out.println(br.getAllErrors().size());
 			
+			//LO RECOJO DEL PATH QUE ASIGNO EN EL JSP
 			String username= req.getParameter("email");
 			String password= req.getParameter("password");
 			
@@ -75,37 +79,30 @@ public class Login_Controller {
 				//LOGUE USANDO CONSULTA HQL
 				//String message = lm.doHibernateLogin(username, password);
 				//MODELO DAO
-				String message = RegisteryDAO.getUserDAO().doHibernateLogin(username, password);
+				int message = RegisteryDAO.getUserDAO().doHibernateLogin(username, password);
 				
-				if(message.equals("Login Correcto")) {
+				//HAGO UNA BUSQUEDA DE TODOS LOS PRODUCTOS DE UN USUARIO POR SU ID RECOGIDO ANTES
+				List <Products> reviews = RegisteryDAO.getProductsDAO().getProductByUserId(message);
+				
+				
+				if(message != 0) {
 					
 					//RECOJO LA SESION Y LE ASIGNO UN NOMBRE
 					session.setAttribute("email", username);
+					
+					//RECOJO LA SESION Y LE ASIGNO UN NOMBRE
+					session.setAttribute("id", reviews);
+					
+					
 					return "redirect:/myprofile";
 					
 				}else {
 					
 					md.addAttribute("error_msg", message);
 				}
-				
-				
-				
-				//LOGUE USANDO CONSULTA SQL
-				/*String message = lm.do_login_process(username, password);
-				
-				if(message.equals("Login Correcto")) {
-					
-					//RECOJO LA SESION Y LE ASIGNO UN NOMBRE
-					session.setAttribute("username", username);
-					return "redirect:/myprofile";
-					
-				}else {
-					
-					md.addAttribute("error_msg", message);
-				}*/
+	
 			}
-			
-			
+
 			return "login";
 			
 		}catch(Exception e){
