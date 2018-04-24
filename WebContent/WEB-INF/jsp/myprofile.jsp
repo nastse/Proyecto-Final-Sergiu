@@ -25,6 +25,7 @@
 				<th>Altura</th>
 				<th>Imagen</th>
 				<th>Eliminar</th>
+				<th>Actualizar</th>
 			</tr>
 			
 
@@ -40,6 +41,7 @@
 				<td>${product.altura}</td>
 				<td><img width="200px" height="200px" src="${pageContext.request.contextPath}/img/${product.imagen}"></td>	
 				<td><input type="button" value="Delete" id="btn_${product.id_rev}"></td>
+				<td><a href="<c:url value='/vista/${product.id_rev}'/>">Editar</a></td>
 			</tr>
 		</c:forEach>
 	</table>
